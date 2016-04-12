@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="org.stayOut.plugins.deviceDetector" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>DeviceDetector</name>
+  <description>Plugin detects type of device</description>
+  <js-module name="DeviceDetector" src="www/DeviceDetector.js">
+    <clobbers target="cordova.plugins.DeviceDetector"/>
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="DeviceDetector">
+        <param name="android-package" value="org.stayOut.plugin.deviceDetector.DeviceDetector"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/DeviceDetector.java" target-dir="src/org/stayOut/plugin/deviceDetector/DeviceDetector"/>
+  </platform>
+</plugin>
